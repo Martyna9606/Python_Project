@@ -57,7 +57,7 @@ while k > 0:
     minimum = []
     decyzja = 0
     while cij[pozycjax][pozycjay] != 0 and pozycjax >= 0 and pozycjay >=0:
-        decyzja = decyzja + cij[pozycjax][pozycjay]
+        decyzja = decyzja + zapotrzebowanie[pozycjay]
         pozycjay -= 1
 
     decyzje[pozycjax] = int(decyzja)
