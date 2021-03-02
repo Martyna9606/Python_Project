@@ -30,9 +30,9 @@ for i in range(ilość_miesięcy):
     m = 1
     for j in range(i, ilość_miesięcy):
         if i == j :
-            cij[i][j] = poprzedni
+            cij[i][j] = round(poprzedni)
         else:
-            cij[i][j] = poprzedni + cena_jednostkowa * zapotrzebowanie[j] * (magazynowanie*m/100)
+            cij[i][j] = round(poprzedni + cena_jednostkowa * zapotrzebowanie[j] * (magazynowanie*m/100))
             m = m + 1
         poprzedni = cij[i][j]
     
@@ -43,14 +43,16 @@ print(cij)
 minimum = []    
 k = ilość_miesięcy - 1
 
-while k > 0:
+while k >= 0:
     for i in range(ilość_miesięcy):
         if cij[i][k] != 0:
             minimum.append(cij[i][k])
-        
-        
+
     minimalny = min(minimum)
-    pozycjax, pozycjay = np.where(cij == minimalny)
+    for m in range(ilość_miesięcy):
+        if cij[m][k] == minimalny:
+            pozycjax = m
+            pozycjay = k
     pozycjax = int(pozycjax)
     pozycjay = int(pozycjay)
 
