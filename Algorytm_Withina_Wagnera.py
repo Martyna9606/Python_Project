@@ -20,7 +20,7 @@ def liczymy():
 
     zapotrzebowanie = []
     decyzje = []
-    magazynowanie = stopa_roczna/12
+    magazynowanie = round(stopa_roczna/12)
     w = 0
     while(w < ilość_miesięcy):
         for i in range(ilość_miesięcy):
@@ -53,9 +53,9 @@ def liczymy():
         m = 1
         for j in range(i, ilość_miesięcy):
             if i == j :
-                cij[i][j] = round(poprzedni)
+                cij[i][j] = poprzedni
             else:
-                cij[i][j] = round(poprzedni + cena_jednostkowa * zapotrzebowanie[j] * (magazynowanie*m/100))
+                cij[i][j] = poprzedni + cena_jednostkowa * zapotrzebowanie[j] * (magazynowanie*m/100)
                 m = m + 1
             poprzedni = cij[i][j]
         
