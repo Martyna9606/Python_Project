@@ -87,7 +87,7 @@ if wybór == '1':
    else:
       opt = linprog(c = Z_var, A_ub = bounds_l, b_ub = bounds_r, bounds = bnd, method = 'revised simplex')
 else:
-   if len(eqal_l) > 0:
+   if len(equal_l) > 0:
       opt = linprog(c = Z_var, A_ub = bounds_l, b_ub = bounds_r, A_eq = equal_l, b_eq = equal_r, bounds = bnd, method = 'simplex')
    else:
       opt = linprog(c = Z_var, A_ub = bounds_l, b_ub = bounds_r, bounds = bnd, method = 'simplex')
