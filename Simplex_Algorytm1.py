@@ -54,6 +54,7 @@ def get_function():
    Z = równanie.get()
    func = Z
    Z = Z.replace(' ', '')
+   Z = Z.replace(',', '.')
    Z = Z.split('+')
    for i in Z:
       j = i
@@ -141,6 +142,7 @@ def dodaj_nierownosc():
    nierownosc = T.get()
    print(nierownosc)
    nier = nierownosc.replace(' ', '')
+   nier = nier.replace(',', '.')
    nierownosc = nierownosc.split()
    print(nierownosc)
    ineq = ['=', '>', '<', '>=', '<=']
